@@ -23,9 +23,9 @@ html {
   @media only screen and (max-width: 68.75em) {
     html {
       font-size: 50%; } }
-
-body {
-  background-color: rgb(194, 166, 89);
+ 
+body { 
+  background-image: url("/img/desktop.jpeg");
   font-family: 'Open Sans', sans-serif;
   font-weight: 400;
   line-height: 1.6;
@@ -36,10 +36,14 @@ body {
   grid-template-columns: 15fr 10fr 15fr;
   grid-template-rows: 1fr 7fr 1fr; }
 
-input[type=checkbox] + label .todos-list__li-icon-2 {
-  stroke-dasharray: 70;
-  stroke-dashoffset: 70; }
+  
+  .todos-form-button{ 
 
+    width: 90px;
+    background-color: rgb(164, 243, 46);
+
+    }
+    
 input[type=checkbox] + label .todos-list__li-text-2 {
   stroke-dasharray: 360;
   stroke-dashoffset: 360; }
@@ -47,10 +51,7 @@ input[type=checkbox] + label .todos-list__li-text-2 {
 input[type=checkbox] + label .checked {
   opacity: 1; }
 
-input[type=checkbox]:checked + label .todos-list__li-icon-2 {
-  stroke-dashoffset: 0;
-  transition: stroke-dashoffset 0.8s ease-in; }
-
+ 
 input[type=checkbox]:checked + label .todos-list__li-text-2 {
   stroke-dashoffset: 0;
   transition: stroke-dashoffset 0.8s ease-in; }
@@ -61,9 +62,7 @@ input[type=checkbox]:checked + label .todos-list__li-text-2 {
 .checked {
   opacity: 0.7; }
 
-input[type=checkbox]:not(:checked) + label .todos-list__li-icon-2 {
-  stroke-dashoffset: 70;
-  transition: stroke-dashoffset 0.4s ease-out; }
+ 
 
 input[type=checkbox]:not(:checked) + label .todos-list__li-text-2 {
   stroke-dashoffset: 360;
@@ -79,6 +78,7 @@ ul li {
   list-style-type: none; }
 
 .todos {
+  background-color: rgb(194, 166, 89);
   display: grid;
   grid-column: 2/3;
   grid-row: 2/3;
@@ -137,14 +137,7 @@ ul li {
       align-items: center;
       justify-content: space-between;
       position: relative; }
-      .todos-list__li-icon {
-        position: absolute;
-        grid-column: 1/2; }
-        .todos-list__li-icon-1 {
-          position: absolute;
-          margin-top: -1.2px; }
-        .todos-list__li-icon-2 {
-          margin-left: 0.8rem; }
+ 
       .todos-list__li-text {
         border-radius: 5rem;
         position: absolute;
