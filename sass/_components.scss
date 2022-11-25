@@ -1,0 +1,57 @@
+
+input[type=checkbox] + label{
+    .todos-list__li-icon-2{
+        stroke-dasharray: 70;
+        stroke-dashoffset: 70;
+    }
+    .todos-list__li-text-2{
+        stroke-dasharray: 360;
+        stroke-dashoffset: 360;
+    }
+    .checked{
+        opacity: 1;
+    }
+}
+input[type=checkbox]:checked + label{
+    .todos-list__li-icon-2{
+      stroke-dashoffset: 0;
+      transition: stroke-dashoffset 0.8s ease-in;
+    }
+   .todos-list__li-text-2{
+      stroke-dashoffset: 0;
+      transition: stroke-dashoffset 0.8s ease-in;
+   }
+   
+} 
+.list{
+    transition: all 0.7s ease-in;
+}
+
+.checked{
+    opacity: 0.7;
+}
+
+input[type=checkbox]:not(:checked) + label{
+    .todos-list__li-icon-2{
+      stroke-dashoffset: 70;
+      transition: stroke-dashoffset 0.4s ease-out;
+    }
+   .todos-list__li-text-2{
+      stroke-dashoffset: 360;
+      transition: stroke-dashoffset 0.4s ease-out;
+   }
+} 
+
+.remove{
+    opacity: 0;  
+}
+
+
+.checkbox{
+    display: none;
+}
+
+ul li
+{
+    list-style-type: none;
+} 

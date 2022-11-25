@@ -1,113 +1,176 @@
+:root {
+  --color-grey-light-1: #faf9f9;
+  --color-grey-light-2: #f4f2f2;
+  --color-grey-light-3: #f0eeee;
+  --color-grey-light-4: #ccc;
+  --color-grey-dark-1: #333;
+  --color-grey-dark-2: #777;
+  --color-grey-dark-3: #999; 
+  --line: 1px solid var(--color-grey-light-2); }
+
 * {
-    box-sizing: border-box;
-}
+  margin: 0;
+  padding: 0; }
 
-/* Remove margins and padding from the list */
-ul {
-    margin: 0;
-    padding: 0;
-}
+*,
+*::before,
+*::after {
+  box-sizing: inherit; }
 
-/* Style the list items */
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; }
+  @media only screen and (max-width: 68.75em) {
+    html {
+      font-size: 50%; } }
+
+body {
+  background-color: rgb(194, 166, 89);
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 15fr 10fr 15fr;
+  grid-template-rows: 1fr 7fr 1fr; }
+
+input[type=checkbox] + label .todos-list__li-icon-2 {
+  stroke-dasharray: 70;
+  stroke-dashoffset: 70; }
+
+input[type=checkbox] + label .todos-list__li-text-2 {
+  stroke-dasharray: 360;
+  stroke-dashoffset: 360; }
+
+input[type=checkbox] + label .checked {
+  opacity: 1; }
+
+input[type=checkbox]:checked + label .todos-list__li-icon-2 {
+  stroke-dashoffset: 0;
+  transition: stroke-dashoffset 0.8s ease-in; }
+
+input[type=checkbox]:checked + label .todos-list__li-text-2 {
+  stroke-dashoffset: 0;
+  transition: stroke-dashoffset 0.8s ease-in; }
+
+.list {
+  transition: all 0.7s ease-in; }
+
+.checked {
+  opacity: 0.7; }
+
+input[type=checkbox]:not(:checked) + label .todos-list__li-icon-2 {
+  stroke-dashoffset: 70;
+  transition: stroke-dashoffset 0.4s ease-out; }
+
+input[type=checkbox]:not(:checked) + label .todos-list__li-text-2 {
+  stroke-dashoffset: 360;
+  transition: stroke-dashoffset 0.4s ease-out; }
+
+.remove {
+  opacity: 0; }
+
+.checkbox {
+  display: none; }
+
 ul li {
-    cursor: pointer;
+  list-style-type: none; }
+
+.todos {
+  display: grid;
+  grid-column: 2/3;
+  grid-row: 2/3;
+  justify-content: center;
+  min-height: 100vh;
+  grid-template-rows: 5rem 8rem auto; }
+  .todos-head {
+    grid-row: 1/2;
+    grid-template-columns: 1fr 1fr;
+    font-size: 3.5rem;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    filter: drop-shadow(0 10px 5px rgba(0, 0, 0, 0.1)); }
+    .todos-head .header {
+      text-shadow: var(--shadow-dark); }
+    .todos-head .fa {
+      margin-left: 2.5rem;
+      margin-top: 7px; }
+  .todos-form {
+    grid-row: 2/3;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center; }
+    .todos-form-input {
+      width: 25rem;
+      height: 4rem;
+      border: none;
+      border-radius: 5px;
+      padding: 1.2rem;
+      background-color: whitesmoke; }
+    .todos-form-button {
+      margin-left: 1rem;
+      height: 4rem;
+      width: 4rem;
+      border: none;
+      border-radius: 2px;
+      color: white;  } 
+  .todos-list {
     position: relative;
-    padding: 12px 8px 12px 40px;
-    background: #eee;
-    font-size: 18px;
-    transition: 0.2s;
-
-    /* make the list items unselectable */
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-}
-
-/* Set all odd list items to a different color (zebra-stripes) */
-ul li:nth-child(odd) {
-    background: #f9f9f9;
-}
-
-/* Darker background-color on hover */
-ul li:hover {
-    background: #ddd;
-}
-
-/* When clicked on, add a background color and strike out text */
-ul li.checked {
-    background: #888;
-    color: #fff;
-    text-decoration: line-through;
-}
-
-/* Add a "checked" mark when clicked on */
-ul li.checked::before {
-    content: '';
-    position: absolute;
-    border-color: #fff;
-    border-style: solid;
-    border-width: 0 2px 2px 0;
-    top: 10px;
-    left: 16px;
-    transform: rotate(45deg);
-    height: 15px;
-    width: 7px;
-}
-
-/* Style the close button */
-.close {
-    position: absolute;
-    right: 0;
-    top: 0;
-    padding: 12px 16px 12px 16px;
-}
-
-.close:hover {
-    background-color: #f44336;
-    color: white;
-}
-
-/* Style the header */
-.header {
-    background-color: #f44336;
-    padding: 30px 40px;
-    color: white;
-    text-align: center;
-}
-
-/* Clear floats after the header */
-.header:after {
-    content: "";
-    display: table;
-    clear: both;
-}
-
-/* Style the input */
-input {
-    margin: 0;
-    border: none;
-    border-radius: 0;
-    width: 75%;
-    padding: 10px;
-    float: left;
-    font-size: 16px;
-}
-
-/* Style the "Add" button */
-.addBtn {
-    padding: 10px;
-    width: 25%;
-    background: #d9d9d9;
-    color: #555;
-    float: left;
-    text-align: center;
-    font-size: 16px;
-    cursor: pointer;
-    transition: 0.3s;
-    border-radius: 0;
-}
-
-.addBtn:hover {
-    background-color: #bbb;
-}
+    grid-row: 3/4; }
+    .todos-list__li {
+      cursor: pointer;
+      height: 4rem;
+      margin-bottom: 1.5rem;
+      padding-left: 0.7rem;
+      border-radius: 2px;
+      box-shadow: var(--shadow-dark);
+      background-color: whitesmoke;
+      top: 1rem;
+      display: grid;
+      grid-template-columns: 1fr 4fr 1fr;
+      align-items: center;
+      justify-content: space-between;
+      position: relative; }
+      .todos-list__li-icon {
+        position: absolute;
+        grid-column: 1/2; }
+        .todos-list__li-icon-1 {
+          position: absolute;
+          margin-top: -1.2px; }
+        .todos-list__li-icon-2 {
+          margin-left: 0.8rem; }
+      .todos-list__li-text {
+        border-radius: 5rem;
+        position: absolute;
+        grid-column: 2/3;
+        font-size: 2rem;
+        display: flex;
+        padding-left: 0.6rem;
+        flex-direction: row;
+        justify-content: left;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+        font-size: 1.6rem;
+        color: #424242; }
+        .todos-list__li-text-1 {
+          position: absolute; }
+        .todos-list__li-text-2 {
+          margin-top: 0.5rem;
+          margin-left: -1.2rem;
+          margin-right: 1rem; }
+      .todos-list__li-delete-todo {
+        cursor: pointer;
+        position: absolute;
+        grid-column: 3/4;
+        height: 100%;
+        width: 100%;
+        border: none;
+        border-radius: 2px;
+        background-color: red; }

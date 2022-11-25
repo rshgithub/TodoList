@@ -1,0 +1,123 @@
+
+.todos{
+
+  display: grid;
+  grid-column: 2/3;
+  grid-row: 2/3;
+  justify-content: center;
+  min-height: 100vh;
+  grid-template-rows: 5rem 8rem auto;
+
+  &-head{
+    grid-row: 1/2;
+    grid-template-columns: 1fr 1fr;
+    font-size: 3.5rem;
+    color: white;
+    display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      filter: drop-shadow(0 10px 5px rgba(0, 0, 0, 0.1));
+    .header{  
+       text-shadow: var(--shadow-dark);
+    }
+    .fa{
+        margin-left: 2.5rem;
+        margin-top: 7px;
+    }
+  }
+
+  &-form{
+    grid-row: 2/3;
+    display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+
+    &-input{
+      width: 25rem;
+      height: 4rem;
+      border: none;
+      border-radius: 5px;
+      padding: 1.2rem;
+      background-color: whitesmoke;
+    }
+
+    &-button{
+      margin-left: 1rem;
+      height:4rem;
+      width: 4rem;
+      border: none;
+      border-radius: 5px;
+      background: linear-gradient(to right,#03A9F4, #1E88E5);
+    }
+  }
+
+  &-list{
+    position: relative;
+    grid-row: 3/4;
+   
+    &__li{
+      cursor: pointer;
+      height: 4rem;
+      margin-bottom: 1.5rem;
+      padding-left: 0.7rem;
+      border-radius: 2px;
+      box-shadow: var(--shadow-dark);
+      background-color:whitesmoke;
+      top:1rem;
+      display: grid;
+      grid-template-columns: 1fr 4fr 1fr;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+
+      &-icon{
+         position: absolute;
+         grid-column: 1/2;
+         &-1{
+           position: absolute;
+           margin-top: -1.2px;
+         }
+         &-2{
+          margin-left: 0.8rem;
+         }
+      }
+
+      &-text{
+        border-radius: 5rem;
+        position: absolute;
+        grid-column: 2/3;
+        font-size: 2rem;
+        display: flex;
+        padding-left: 0.6rem;
+        flex-direction: row;
+        justify-content: left;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+        font-size: 1.6rem;
+        color: #424242;
+        &-1{
+          position: absolute;
+        }
+        &-2{
+          margin-top: 0.5rem;
+          margin-left: -1.2rem;
+          margin-right: 1rem;
+        }
+      }
+   
+      &-delete-todo{
+        cursor: pointer;
+        position: absolute;
+        grid-column: 3/4;
+        height: 100%;
+        width: 100%;
+        border: none;
+        border-radius: 2px;
+        background-color: red;
+      }
+    }
+  }
+}
