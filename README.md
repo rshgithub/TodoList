@@ -1,11 +1,8 @@
 # ToDo List
 
 A simple animated todo list web-app built in HTML, CSS and Vanilla JavaScript.
-
-<img src="https://drive.google.com/uc?export=view&id=12P2tXibD55rpnsGTyKaErT8aMcMPgCYv" width="555" height="250" />
-
-You can test the code [here](https://codepen.io/Sahi515/pen/ZEOWgxN) (CodePen).
-
+![Screenshot 2022-11-25 at 18-07-45 ToDoList](https://user-images.githubusercontent.com/29553481/204022425-f0985aef-e6eb-48c6-8cf3-a186b7bfc456.png)
+ 
 
 ## LICENCE
 
